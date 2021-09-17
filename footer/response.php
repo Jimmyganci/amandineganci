@@ -13,11 +13,11 @@ $msg = "Une erreur est survenue (response.php)";
                     $reqmail = $bddNews->prepare("SELECT * FROM newsletters WHERE mail=? ");
                     $reqmail->execute(array($mail));
                     $mailexist = $reqmail->rowCount();
-                    if($mailexist ==0) {
+                    if($mailexist == 0) {
                         $reqmail = $bddNews->prepare("INSERT INTO newsletters(mail) VALUES ('$mail')");
                         $reqmail->execute(array($mail));
                         $success = 1;
-                        $msg = "Votre adresse mail a bien été pris en compte! Merci";
+                        $msg = "Votre inscription à la newsletter a bien été pris en compte!";
 
                     } else {
                         $msg = "Vous etes déjà inscrit à la newsletter!";
