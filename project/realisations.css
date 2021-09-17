@@ -1,0 +1,147 @@
+/* header select */
+#rea::after {
+  width: 110%;
+  background: rgba(239, 222, 211, 0.822);
+}
+/* ------------------------------ */
+main {
+  overflow: hidden;
+}
+.hero-header-portefolio {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.title-portefolio {
+  text-align: end;
+  margin: 0;
+  width: 95%;
+}
+.title-portefolio h1 {
+  margin: 40vh 0 0 0;
+  letter-spacing: 1vw;
+  font-size: 4em;
+  color: rgb(239, 222, 211);
+  transition: 0.5s ease;
+}
+.title-portefolio h4,
+.title-portefolio p {
+  margin-right: 15px;
+  transition: 1s ease;
+}
+.portefolio {
+  margin-top: 115vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(239, 222, 212, 0.3);
+}
+.portefolio span {
+  display: none;
+}
+#portefolio2 {
+  background: white;
+  margin-top: 0;
+}
+#portefolio3 {
+  margin-top: 0;
+}
+.text-portefolio {
+  text-align: center;
+  padding: 100px 0 200px;
+  transition: 0.5s ease-in;
+  width: 50%;
+  z-index: 2;
+}
+.text-portefolio h2,
+.text-portefolio p {
+  width: 60%;
+  margin: 20px auto;
+}
+.text-portefolio button {
+  padding: 20px;
+  border: none;
+  background: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  transition: 0.8s ease-in-out;
+}
+.text-portefolio button:hover {
+  background: transparent;
+  background-image: url(/assets/fleche-droite.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+.text-portefolio button p {
+  transition: 0.5s;
+  width: 100%;
+}
+.text-portefolio button:hover p {
+  opacity: 0;
+}
+#text-portefolio2 button {
+  background-position: 100% 0;
+}
+#text-portefolio2 button:hover {
+  background-image: url(/assets/fleche-gauche.svg);
+  background-position: 0 0;
+}
+.cont-pf1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 0.8fr;
+  gap: 4px;
+  width: 45%;
+  margin-top: -50px;
+  position: relative;
+}
+.cont-pf1 span {
+  display: none;
+}
+.carre-nude {
+  background: rgb(239, 222, 212);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -25px;
+  left: -25px;
+}
+#carre-nude-left {
+  left: 25px;
+}
+.project {
+  opacity: 1;
+  width: 100%;
+  margin: 0;
+  transform: scale(1);
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 2;
+}
+.project img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: 1s ease-in;
+}
+.project img:hover {
+  transform: scale(1.2);
+}
+.title {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  display: none;
+}
+.title:hover {
+  height: auto;
+}
+#text-portefolio3 {
+  padding-bottom: 0;
+}

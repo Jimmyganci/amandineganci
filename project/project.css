@@ -1,0 +1,54 @@
+/* ------------Projet-------------------- */
+.article2 {
+  background: transparent;
+  margin-bottom: 150px;
+}
+.cont-project {
+  display: flex;
+  justify-content: space-around;
+  background: transparent;
+  transition: 0.5s ease;
+}
+.article2 span {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  width: 40px;
+  transition: 0.3s ease-in;
+  z-index: 2;
+}
+.project {
+  width: 20%;
+  position: relative;
+  box-shadow: 1px 1px 5px 2px rgba(155, 155, 155, 0.59);
+  line-height: 0px;
+  transition: 1s ease;
+}
+.project img {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: "Font2";
+  font-size: 1em;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(239, 222, 211, 0.8);
+  border: none;
+  padding: 10px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  overflow: hidden;
+}
+.title p {
+  margin: 5px 0;
+}
+.title:hover {
+  height: 80%;
+}
+/* ---------Fin Projet------------------- */

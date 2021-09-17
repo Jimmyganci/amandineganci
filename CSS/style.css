@@ -1,0 +1,375 @@
+@media screen and (max-width: 800px) {
+  div.hero-header {
+    padding: 40% 0;
+  }
+  div.text-welcome p,
+  div.contact p {
+    width: 70%;
+  }
+  article.article1,
+  div.cont-service {
+    flex-direction: column;
+  }
+  div.story-image {
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+  }
+  div.text-story {
+    width: 90%;
+    padding: 50px 10px;
+  }
+  div#story-service,
+  div#story-service2 {
+    width: 60%;
+  }
+  div#story-service {
+    margin: 0 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  div.hero-header {
+    padding: 50% 0;
+  }
+  div.hero-text {
+    top: 45%;
+  }
+}
+@media screen and (max-width: 500px) {
+  div.hero-header {
+    padding: 70% 0;
+  }
+}
+@media screen and (max-width: 370px) {
+  div.hero-text {
+    top: 40%;
+  }
+}
+@media screen and (max-width: 290px) {
+  div.hero-text {
+    top: 20%;
+  }
+}
+@font-face {
+  font-family: "Font1";
+  src: url("/Police/futura.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Font2";
+  src: url("/Police/antonio-light.woff2") format("woff2");
+  font-display: swap;
+}
+* {
+  font-family: "Font1";
+}
+main {
+  overflow-x: hidden;
+  margin-top: 80px;
+}
+h1,
+h2 {
+  font-family: "Font2";
+}
+#stud::after {
+  width: 110%;
+  background: rgba(239, 222, 211, 0.822);
+}
+/* --------CAROUSSEL------- */
+.slider img {
+  width: 100%;
+}
+
+.btn-nav {
+  width: 30px;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.cont-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.cont-left,
+.cont-right {
+  position: absolute;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+}
+.cont-left {
+  left: 0;
+}
+.cont-right {
+  right: 0;
+}
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  font-size: 45px;
+  z-index: 2;
+  color: rgb(239, 222, 212);
+  margin: 50vh 0;
+  opacity: 0;
+}
+.right {
+  right: 25px;
+  text-align: end;
+}
+.left {
+  text-align: start;
+  left: 25px;
+}
+.hero-header {
+  width: 100%;
+  display: none;
+  position: relative;
+  padding: 30% 0;
+  transition: 1s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+}
+.hero-text {
+  position: absolute;
+  width: 70%;
+  top: 40%;
+  transform: translateY(-50%);
+  right: 10%;
+  opacity: 0;
+  text-align: end;
+}
+.hero-text.active {
+  z-index: 9;
+  -webkit-animation: slide 1s linear 1s both;
+  animation: slide 1s linear 1s both;
+}
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hero-text h1 {
+  font-family: "Font2";
+  font-size: 2em;
+  color: white;
+  font-weight: normal;
+}
+.hero-text p {
+  font-size: 1.5em;
+  margin: 20px 0 50px;
+  color: white;
+}
+.hero-text a {
+  padding: 20px;
+  background: rgba(239, 222, 212, 0.788);
+  transition: 0.3s ease-in-out;
+  color: black;
+}
+.hero-text a:hover {
+  background: rgba(0, 0, 0, 0.788);
+  color: rgb(239, 222, 212);
+}
+.hero-header.active {
+  display: block;
+  -webkit-animation: fade 1s ease-in-out;
+  animation: fade 1s ease-in-out;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#hh1 {
+  background-image: url(/assets/diapo/img1.jpg);
+}
+#hh2 {
+  background-image: url(/assets/diapo/img2.jpg);
+}
+#hh3 {
+  background-image: url(/assets/diapo/img3.jpg);
+}
+#hh4 {
+  background-image: url(/assets/diapo/projet-katana-restaurant.jpg);
+}
+
+/* --------FIN CAROUSSEL------- */
+.block {
+  position: relative;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block h2 {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    transparent 41%,
+    rgba(239, 222, 212, 0.8) 41%
+  );
+  padding: 0 10px 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.text-welcome {
+  position: relative;
+  text-align: center;
+  margin-bottom: 150px;
+}
+.text-welcome p {
+  width: 45%;
+  margin: 0 auto;
+  line-height: 30px;
+}
+.text-welcome p span {
+  position: absolute;
+  top: -180px;
+  left: 10px;
+  width: 300px;
+  z-index: -1;
+}
+#quotation {
+  top: 50%;
+  left: 98%;
+  transform: translateX(-100%);
+  width: 250px;
+}
+.text-welcome p span img {
+  width: 100%;
+}
+/* ---------------Biographie------------ */
+article {
+  margin: 100px 0;
+  background: rgba(239, 222, 212, 0.3);
+  position: relative;
+}
+.article1 {
+  display: flex;
+  padding-bottom: 100px;
+}
+#block2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: -30px 0 30px;
+  z-index: 2;
+}
+.story-image {
+  width: 45%;
+  background: rgba(239, 222, 212);
+  margin: -100px 0 0 50px;
+  height: 100%;
+}
+.story-image img {
+  width: 100%;
+  margin: 35px 25px -35px -25px;
+  opacity: 0.8;
+}
+.text-story {
+  width: 55%;
+  padding: 50px;
+  margin: 0 auto;
+}
+.text-story h2 .text-story h3,
+.text-story p {
+  margin: 20px 0;
+}
+#sign {
+  text-align: end;
+  margin-right: 20px;
+  font-size: 1.2em;
+}
+#block3 {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  margin: 0;
+  transform: translateY(30%);
+}
+/* ------------Fin Biographie------------ */
+
+/* ---------Service---------------------- */
+.article3 {
+  background: linear-gradient(
+    180deg,
+    rgba(239, 222, 212, 0.3) 70%,
+    transparent 30%
+  );
+  margin-bottom: 50px;
+}
+#block4 {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  margin: 0;
+  transform: translateY(-70%);
+}
+.cont-service {
+  display: flex;
+  margin-top: 10px;
+}
+#image-service {
+  margin: 35px -25px -35px 25px;
+}
+#story-service {
+  width: 40%;
+  margin: -50px 20px 0 0;
+}
+#story-service2 {
+  margin-left: 5%;
+  width: 40%;
+  margin-top: 0;
+}
+#block5 {
+  position: absolute;
+  top: 103%;
+  right: 10%;
+  margin: 0;
+}
+/* ---------Fin service------------------ */
+/* ------------BLOG--------------- */
+.article4 {
+  margin: 150px 0;
+  background: transparent;
+}
+/* ----------Fin BLOG------------- */
+/* footer */
