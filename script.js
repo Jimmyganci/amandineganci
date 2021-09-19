@@ -172,3 +172,21 @@ if (formNews) {
   });
 }
 // -----------------Fin newsletters----------------------------
+// ------------------ADMIN-------------------------------
+const addProject = document.getElementById("cont-addProject");
+const delProject = document.getElementById("cont-delete");
+const addButton = document.getElementById("addButton");
+const delButton = document.getElementById("delButton");
+delButton.addEventListener("click", () => {
+  addProject.style.display = "none";
+  addButton.classList.remove("active");
+  delProject.style.display = "block";
+  delButton.classList.add("active");
+});
+addButton.addEventListener("click", () => {
+  addProject.style.display = "block";
+  addButton.classList.add("active");
+  delProject.style.display = "none";
+  delButton.classList.remove("active");
+});
+// ---------------Fin ADMIN-----------------------------

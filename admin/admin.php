@@ -57,14 +57,14 @@ if(isset($_SESSION['id']) && $admin[0]>0)
             <article class="article2" >
                 <div class="login" align="center" id="login-realisation">
                     <h2>Réalisations</h2><br>
-                        <form method="post" enctype="multipart/form-data" >
+                        <form method="post" id="cont-addProject" enctype="multipart/form-data" >
                             <table>
                                 <tr>
                                     <td>
                                         <label for="image-project" class="form-label">Image</label>
                                     </td>
                                     <td>
-                                        <input type="file" class="form-control" name="image-project" required>
+                                        <input type="file" class="form-control" name="image-project">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="100000">
                                     </td>
                                         
@@ -74,7 +74,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="name-image" class="form-label">Description de l'image</label>
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control" name="name-image" required>
+                                        <input type="text" class="form-control" name="name-image">
                                     </td>
                                 </tr>
                                 <tr>
@@ -82,7 +82,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="title-project" class="form-label">Titre du projet</label>
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control" name="title-project" required>
+                                        <input type="text" class="form-control" name="title-project">
                                     </td> 
                                 </tr>
                                 <tr>
@@ -90,7 +90,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="desc-project" class="form-label">Description du projet</label>
                                     </td>
                                     <td>
-                                        <textarea  class="form-control" name="desc-project" required></textarea>
+                                        <textarea  class="form-control" name="desc-project"></textarea>
                                     </td>   
                                 </tr>
                                 <tr>
@@ -98,7 +98,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="cate-project" class="form-label">Catégorie</label>
                                     </td>
                                     <td>
-                                        <select  class="form-control" name="cate-project" required>
+                                        <select  class="form-control" name="cate-project">
                                             <option value="">Selectionner votre catégorie</option>
                                             <option value="pro">Pro</option>
                                             <option value="part">Part</option>
@@ -109,7 +109,8 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                 </table>
 
                                         <input type="submit" name="submit" value="Ajouter le projet">
-                        <section>
+                        </form>
+                        <section id="cont-delete">
                             <article class="gridDelete">
                                 <?php foreach($Projects as $project): 
                                     ?>  
@@ -117,23 +118,23 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                     
                                     <img src="<?= $project->image; ?>" alt="<?= $project->desc_image;?>">
                                     <h6><?= $project->title_project; ?></h6>
-                                    <div class="delButton">
+                                    <p><?= $project->id ?></p>
+                                    
+                                </div>
+                                <?php endforeach; ?>
+                                
+                            </article>
+                            <div class="delButton">
                                         <form method="post">
+                                        <label for="idproject" class="form-label">N° du projet</label>
+                                        <input type="number" class="form-control" name="idproject">
                                         <button name="delete" type="submit">Supprimer</button>
                                         </form>
                                     </div>
-                                </div>
-                                <?php
-                                    if(isset($_POST['delete'])){
-                                    deleteProd($project->id);
-                                    }
-                                ?>
-                                <?php endforeach; ?>
-                            </article>
                         </section>
                         <div class="addDelete">
-                            <button class="active">Ajouter</button>
-                            <button>Supprimer</button>
+                            <button id="addButton" class="active">Ajouter</button>
+                            <button id="delButton">Supprimer</button>
                         </div>
                         </div>
                         <div class="login" align="center" id="avis">
@@ -145,7 +146,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="text-avis" class="form-label">Avis</label>
                                     </td>
                                     <td>
-                                        <textarea  class="form-control" name="text-avis" id="text-avis" required></textarea>
+                                        <textarea  class="form-control" name="text-avis" id="text-avis"></textarea>
                                     </td>   
                                 </tr>
                                 <tr>
@@ -153,7 +154,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         <label for="name-client" class="form-label">Nom du client</label>
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control" name="name-client" required>
+                                        <input type="text" class="form-control" name="name-client">
                                     </td>  
                                 </tr>
                                 
@@ -240,7 +241,7 @@ if(isset($_POST['submit']))
                                 $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
                                 if(move_uploaded_file($_FILES['image-project']['tmp_name'], $dossier . "/".$category."/" . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
                                 {
-                                    addProj($fichierUrl, $descimage, $titleproject, $descproject, $category, $dateproject); 
+                                    addProj($fichierUrl, $descimage, $titleproject, $descproject, $category); 
                                     echo 'Upload effectué avec succès !';
                                 }
                                 else //Sinon (la fonction renvoie FALSE).
@@ -283,5 +284,28 @@ if(isset($_POST['submit']))
     }
   }
 
-   
+
+if(isset($_POST['delete']))
+{
+    if(isset($_POST['idproject']))
+    {
+        if(!empty($_POST['idproject']) AND is_numeric($_POST['idproject']))
+        {
+           
+            $idproduct = htmlspecialchars(strip_tags($_POST['idproject']));
+
+            try 
+            {
+                deleteProj($idproduct);
+
+            } catch(Exception $e) 
+
+            {
+                $e->getMessage();
+            }
+        }
+    }
+}
+
+
 ?>
