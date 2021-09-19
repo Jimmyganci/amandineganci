@@ -53,15 +53,15 @@ $CategoryEvent = $bdd->query("SELECT * FROM projects where category = 'even' ORD
 <?php foreach($CategoryPart as $project): ?>
     
               <div class="project">
-                <a href="#">
-                <img src="<?= $project->image; ?>" alt="<?= $project->desc_image;?>">
-                <button class="title"><h2><?= $project->title_project; ?></h2>
-                <p><?= $project->desc_project; ?></p>
-              </button>
-                </a>   
+                  <a href="#">
+                    <img src="<?= $project->image; ?>" alt="<?= $project->desc_image;?>">
+                    <button class="title"><h2><?= $project->title_project; ?></h2>
+                      <p><?= $project->desc_project; ?></p>
+                    </button>
+                  </a>   
                </div>
               <?php endforeach; ?>
-              </div>
+      </div>
 </article>
 <article class="portefolio" id="portefolio2">
 <div class="cont-pf1" id="cont-pf1-left">

@@ -11,7 +11,7 @@ try {
       PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
     );
    
-    // Initialisation de la connection
+    // Initialisation de la connexion
     $bdd = new PDO( $dns, $utilisateur, $mdp, $options );
 }
 catch ( Exception $e ) {
