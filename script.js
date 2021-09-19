@@ -151,6 +151,8 @@ formNews.addEventListener("submit", (e) => {
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.response);
+      document.getElementById("responseNewsletter").innerHTML =
+        this.response["msg"];
     } else if (this.readyState == 4) {
       alert("une erreur est survenue");
     }
@@ -163,7 +165,4 @@ formNews.addEventListener("submit", (e) => {
 
   return false;
 });
-
-// document.getElementById("closewindow").addEventListener("click", () => {
-//   document.getElementById("alert-news").style.display = "none";
-// });
+// -----------------Fin newsletters----------------------------

@@ -1,5 +1,4 @@
 <?php 
-$bddNews = new PDO('mysql:host=localhost; dbname=amandineganci', 'root', '');
 $Avis = $bdd->query('SELECT * FROM avis_table');
 ?>
 
@@ -34,9 +33,9 @@ $Avis = $bdd->query('SELECT * FROM avis_table');
                 <img src="assets/logo.png" alt="logo_agence" class="mini-logo">
             </li>
             <li class="social">
-                <div><a href="#"><img src="assets/iconfb.png" alt="logo_facebook"></a></div>
-                <div><a href="#"><img src="assets/iconinsta.png" alt="logo_instagram"></a></div>
-                <div><a href="#"><img src="assets/iconpint.png" alt="logo_pinterest"></a></div>
+                <div><a href="https://www.facebook.com/agancinterior"><img src="assets/iconfb.png" target="_blank" rel="noopener" alt="logo_facebook"></a></div>
+                <div><a href="https://www.instagram.com/agancinteriordesign/"><img src="assets/iconinsta.png" target="_blank" rel="noopener" alt="logo_instagram"></a></div>
+                <div><a href="https://www.pinterest.fr/agancinteriordesign/_saved/"><img src="assets/iconpint.png" target="_blank" rel="noopener" alt="logo_pinterest"></a></div>
                 
             </li>
         </ul>
@@ -70,16 +69,13 @@ $Avis = $bdd->query('SELECT * FROM avis_table');
         </div>
         <ul class="subscribe">
             <li><p><h4>Souscrire à la newsletter</h4></p></li>
-            <li >
+            <li>            
                 <form method="GET" class="form-subscribe" id="form-subscribe">
-                    
                     <label for="subscribe"></label>
                     <input type="mail" name="mail" placeholder="Entrez votre email">
                     <input id="submitNewsletter" type="submit" name="submit" value=" > ">
-                </form>
-                <!-- <div class="alert-news" id="alert-news"> -->
-                    <?php if(isset($_POST['submit'])) { echo $msg; } ?>
-                    <!--  -->
+                    <p id="responseNewsletter"></p>
+                </form> 
             </li>
         </ul>
     </nav>
