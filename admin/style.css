@@ -60,3 +60,56 @@ textarea {
 #text-avis {
   height: 250px;
 }
+#cont-delete {
+  display: none;
+}
+.delButton {
+  width: 25%;
+}
+.delButton input {
+  text-align: center;
+}
+.addDelete {
+  padding: 2rem;
+  border-top: 2px solid black;
+  margin: 2rem;
+}
+.addDelete button,
+.delButton button {
+  border: none;
+  background: white;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border: 1px solid white;
+}
+.delButton button:hover {
+  background: rgb(239, 222, 211);
+}
+.addDelete .active {
+  border: 2px solid black;
+  cursor: none;
+}
+.gridDelete {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.deleteProj {
+  position: relative;
+}
+.deleteProj h6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1rem;
+}
+.deleteProj img {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
+}

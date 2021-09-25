@@ -15,10 +15,10 @@ function addProj($fichierUrl, $descimage, $titleproject, $descproject, $category
 }
 
 
-function deleteProd($id){
+function deleteProj($id){
     if(require("../configs/connexion.php")){
 
-        $req=$bdd->prepare("DELETE FROM projects WHERE id=?");
+        $req=$bdd->prepare("DELETE FROM projects WHERE id=$id");
 
         $req->execute(array($id));
     }
