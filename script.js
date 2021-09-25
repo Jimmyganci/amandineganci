@@ -141,28 +141,31 @@ window.addEventListener("scroll", () => {
 // -----------Fin réalisations------------------------
 // -----------Newsletter-----------------------------
 const formNews = document.getElementById("form-subscribe");
-formNews.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (formNews) {
+  formNews.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  let data = new FormData(formNews);
+    let data = new FormData(formNews);
 
-  let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
-  xhr.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.response);
-      document.getElementById("responseNewsletter").innerHTML =
-        this.response["msg"];
-    } else if (this.readyState == 4) {
-      alert("une erreur est survenue");
-    }
-  };
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.response);
+        document.getElementById("responseNewsletter").innerHTML =
+          this.response["msg"];
+      } else if (this.readyState == 4) {
+        alert("une erreur est survenue");
+      }
+    };
 
-  xhr.open("POST", "footer/response.php", true);
-  xhr.responseType = "json";
-  // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.send(data);
+    xhr.open("POST", "footer/response.php", true);
+    xhr.responseType = "json";
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(data);
 
-  return false;
-});
+    return false;
+  });
+}
+
 // -----------------Fin newsletters----------------------------

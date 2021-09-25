@@ -40,8 +40,16 @@ textarea:focus {
 .form-control {
   width: 100%;
 }
+.addButtonPhoto {
+  border: none;
+  padding: 0.5em;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
 td {
   padding: 0 10px;
+  text-align: end;
 }
 textarea {
   resize: vertical;

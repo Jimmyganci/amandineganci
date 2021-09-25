@@ -61,6 +61,7 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                             <td>
                                 <input type="file" class="form-control" name="image-project" required>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                                <button class="addButtonPhoto">Ajouter plusieurs photos</button>
                             </td>
                                 
                         </tr>
