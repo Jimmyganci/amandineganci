@@ -189,4 +189,14 @@ addButton.addEventListener("click", () => {
   delProject.style.display = "none";
   delButton.classList.remove("active");
 });
+document.querySelector(".addButtonPhoto").addEventListener("click", (e) => {
+  e.preventDefault();
+  const addPhoto = document.getElementById("uploadPhoto");
+  const newPhoto = addPhoto.cloneNode(true);
+  newPhoto.removeAttribute("id");
+  document.getElementById("contUpload").appendChild(newPhoto);
+  document
+    .getElementById("contUpload")
+    .appendChild(document.getElementById("uploadTitle").cloneNode(true));
+});
 // ---------------Fin ADMIN-----------------------------
