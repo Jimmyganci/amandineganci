@@ -11,10 +11,6 @@ $reqProjects->execute();
 $Projects = $reqProjects->fetchAll(PDO::FETCH_OBJ);
 
 
-
-
-
-
 if(isset($_SESSION['id']) && $admin[0]>0)
 { 
         $requser = $bdd->prepare("SELECT * FROM users_admin WHERE id=?");
@@ -59,17 +55,16 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                     <h2>Réalisations</h2><br>
                         <form method="post" id="cont-addProject" enctype="multipart/form-data" >
                             <table>
-                                <tr>
+                            <tbody id="contUpload">
+                                <tr id="uploadPhoto">      
                                     <td>
                                         <label for="image-project" class="form-label">Image</label>
                                     </td>
                                     <td>
                                         <input type="file" class="form-control" name="image-project">
-                                        <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-                                    </td>
-                                        
-                                </tr>
-                                <tr>
+                                        <input type="hidden" name="MAX_FILE_SIZE" value="100000">                     
+                                    </td>                                                                                 
+                                <tr id="uploadTitle">
                                     <td>   
                                         <label for="name-image" class="form-label">Description de l'image</label>
                                     </td>
@@ -106,6 +101,13 @@ if(isset($_SESSION['id']) && $admin[0]>0)
                                         </select>
                                     </td>   
                                 </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                    <button class ="addButtonPhoto">Ajouter plusieurs photos</button>
+                                    </td> 
+                                </tr>
+                                </tbody>
                                 </table>
 
                                         <input type="submit" name="submit" value="Ajouter le projet">

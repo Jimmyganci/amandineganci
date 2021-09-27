@@ -47,6 +47,10 @@ textarea:focus {
   text-decoration: underline;
   cursor: pointer;
 }
+.addButtonPhoto:hover {
+  color: #f44336;
+}
+
 td {
   padding: 0 10px;
   text-align: end;
